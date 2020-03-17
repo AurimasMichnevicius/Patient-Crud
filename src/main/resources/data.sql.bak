@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS patients ;
+
+CREATE TABLE patients  (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  name VARCHAR(250) NOT NULL,
+  surname VARCHAR(250) NOT NULL,
+  personalcode VARCHAR(250) NOT NULL,
+  condition VARCHAR(250) NOT NULL,
+);
+
+INSERT INTO patients (name, surname, personalcode,condition) VALUES
+  ('Aurimas', 'Sergantis', '20456410','Lengva');

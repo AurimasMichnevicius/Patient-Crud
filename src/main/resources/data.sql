@@ -1,0 +1,1 @@
+INSERT INTO patients (name, surname, personalcode, condition) VALUES('Aurimas', 'Sergantis', 20456410,'Lengva');
