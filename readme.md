@@ -9,7 +9,6 @@ http://localhost/api/v1/
 
 CREATE:
 '  {
-        "id": 1,
         "name": "Aurimas",
         "surname": "Sergantis",
         "personalCode": "20456410",
@@ -17,14 +16,12 @@ CREATE:
     }
 	
 	  {
-        "id": 1,
         "name": "Kostas",
         "surname": "Mentalitas",
         "personalCode": "14456410",
         "condition": "Sunki"
     }
 	  {
-        "id": 1,
         "name": "Laurynas",
         "surname": "Pavardenis",
         "personalCode": "87456410",
