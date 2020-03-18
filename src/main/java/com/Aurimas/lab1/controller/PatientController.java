@@ -74,6 +74,30 @@ public class PatientController {
         }
     }
 
+	@PatchMapping("/patients/{id}")
+    public ResponseEntity <Patient> patchPatient(@PathVariable(value = "id") Long patientId,
+                                          @Valid @RequestBody Patient PatientDetails) throws ResourceNotFoundException{
+        Patient patient = patientRepository.findById(patientId)
+                .orElseThrow(()-> new ResourceNotFoundException("Patient not found for this id :: " + patientId));
+			if (PatientDetails.getName() != null)
+			{
+            patient.setname(PatientDetails.getName());
+			}
+			if (PatientDetails.getSurname() != null)
+			{
+            patient.setsurname(PatientDetails.getSurname());
+			}
+			if (PatientDetails.getPersonalCode() != null)
+			{
+            patient.setpersonalCode(PatientDetails.getPersonalCode());
+			}
+			if (PatientDetails.getCondition() != null)
+			{
+			patient.setCondition(PatientDetails.getCondition());
+			}
+            final Patient updatedPatient = patientRepository.save(patient);
+            return ResponseEntity.status(HttpStatus.OK).body(updatedPatient);
+    }
     //delete
     @DeleteMapping("/patients/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
